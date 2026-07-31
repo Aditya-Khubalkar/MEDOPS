@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ─── Design Tokens ──────────────────────────────────────────────── */
+:root {
+  --brand-50:  #fff1f2;
+  --brand-100: #ffe4e6;
+  --brand-200: #fecdd3;
+  --brand-400: #fb7185;
+  --brand-500: #f43f5e;
+  --brand-600: #e11d48;
+  --brand-700: #be123c;
+  --brand-800: #9f1239;
+
+  --surface:   #ffffff;
+  --surface-2: #f9fafb;
+  --surface-3: #f3f4f6;
+  --border:    #e5e7eb;
+  --border-2:  #d1d5db;
+
+  --text-primary:   #111827;
+  --text-secondary: #6b7280;
+  --text-muted:     #9ca3af;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--surface-2);
+    color: var(--text-primary);
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 min-h-screen;
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.01em;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #e11d48;
+    outline-offset: 2px;
+  }
+}
+
+/* ─── Utilities ──────────────────────────────────────────────────── */
+@layer utilities {
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm;
+  }
+
+  .card-lg {
+    @apply bg-white rounded-2xl border border-gray-200 shadow-sm;
+  }
+
+  .badge-critical {
+    @apply bg-red-100 text-red-700 border border-red-200 px-2.5 py-0.5 rounded-md text-xs font-bold;
+  }
+
+  .badge-warning {
+    @apply bg-amber-100 text-amber-700 border border-amber-200 px-2.5 py-0.5 rounded-md text-xs font-bold;
+  }
+
+  .badge-normal {
+    @apply bg-emerald-100 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-md text-xs font-bold;
+  }
+
+  .badge-pending {
+    @apply bg-gray-100 text-gray-600 border border-gray-200 px-2.5 py-0.5 rounded-md text-xs font-bold;
+  }
+
+  .btn-primary {
+    @apply bg-rose-600 hover:bg-rose-700 text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 font-medium px-4 py-2 rounded-lg transition-colors text-sm;
+  }
+
+  .input-field {
+    @apply w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-all outline-none;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold text-gray-500 uppercase tracking-wider;
+  }
+
+  .status-dot-online {
+    @apply w-2 h-2 rounded-full bg-emerald-500;
+  }
+
+  .status-dot-offline {
+    @apply w-2 h-2 rounded-full bg-red-500;
+  }
+
+  .status-dot-connecting {
+    @apply w-2 h-2 rounded-full bg-amber-400 animate-pulse;
+  }
+}
+
+/* ─── Leaflet Map Overrides ──────────────────────────────────────── */
+
+.leaflet-container {
+  width: 100%;
+  max-width: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12) !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: white !important;
+  color: #374151 !important;
+  border: 1px solid #e5e7eb !important;
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 28px !important;
+  font-size: 15px !important;
+  transition: background-color 0.15s !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #fff1f2 !important;
+  color: #e11d48 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255,255,255,0.9) !important;
+  backdrop-filter: blur(4px);
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px 0 0 0 !important;
+  color: #6b7280 !important;
+}
+
+.leaflet-control-attribution a {
+  color: #e11d48 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 10px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
+  padding: 0 !important;
+  border: 1px solid #e5e7eb;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  line-height: 1.5 !important;
+}
+
+.leaflet-popup-tip {
+  box-shadow: none !important;
+}
+
+.medops-marker {
+  background: none !important;
+  border: none !important;
+}
