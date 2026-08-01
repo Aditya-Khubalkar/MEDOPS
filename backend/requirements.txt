@@ -1,0 +1,12 @@
+fastapi[standard]
+uvicorn[standard]
+websockets
+python-dotenv
+google-adk
+arize-phoenix-client
+arize-phoenix-otel
+openinference-instrumentation-google-adk
+SQLAlchemy
+pydantic
+python-multipart
+google-generativeai
